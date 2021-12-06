@@ -87,7 +87,7 @@ public class HashTable {
     }
 
 
-    //find frequency of words in a large paragraph phrase
+    //find frequency  words in a large paragraph phrase
     public void freqOfWords(String str){
         Map<String, Integer> map = new TreeMap<>();
         String arr[] = str.split(" ");
@@ -102,6 +102,19 @@ public class HashTable {
             System.out.println(entry.getKey()+ "--->"+entry.getValue());
         }
     }
+
+    public void remWord(String str) {
+        Map<String, Integer> map = new TreeMap<>();
+
+        Iterator <String> word = map.keySet().iterator();
+        while (word.hasNext()){
+            if (word.next().equals(str)){
+                word.remove();
+            }
+        }
+    }
+
+
 
     public static void main(String[] args) {
 
@@ -130,5 +143,7 @@ public class HashTable {
         String paraString = "paranoids are not paranoids because they are paranoid but they keep putting themselves deliberately into paranoid avoidable situation";
         System.out.println("Given Para String : " + paraString);
         hashTable.freqOfWords(paraString);
+
+        hashTable.remWord("they");
     }
 }
